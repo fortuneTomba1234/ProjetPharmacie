@@ -1,0 +1,203 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body{
+    background-color: #f0f5f2;
+    color: #333;
+}
+
+header{
+    background-color: #2f7d4e;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img{
+     width: 150px;  
+     height: auto;
+     border-radius: 4%;
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    gap: 45px;
+}
+
+nav ul li a{
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a {
+    color: white;
+    z-index: 1;
+    display: block;
+    text-decoration: none;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    padding-left: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 15px;
+    border-radius: 20px;
+}
+
+nav ul li a:hover{
+    background-color: rgb(255, 254, 255);
+    color: #2f7d4e;
+    transition: 01s;
+}
+
+.hero{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    background-color: #eaf5ed;
+    flex-wrap: wrap;
+}
+
+.hero-text h1{
+    font-size: 3em;
+    max-width: 500px;
+}
+
+.hero-img img{
+    width: 550px;
+    border-radius: 3%;
+    
+}
+
+.corp{
+    display:flex;
+    justify-content: space-around;
+    padding: 40px;
+    background-color: white;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.box{
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 150px;
+    width: 450px;
+    
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 5px rgb(#2f7d4e);
+    transition: 0.5s;
+} 
+
+
+.box:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 8px20px rgba(0,0,0,0.2);
+}
+
+.box i{
+    font-size: 30px;
+    color: #2f7d4e;
+    margin-bottom: 10px;
+}
+
+.box h3{
+    font-size: 1.1em;
+    margin-bottom: 8px;
+}
+
+.box p{
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #2f7d4e;
+}
+
+.bottom-bar {
+      background-color: #222;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      font-size: 14px;
+}
+
+.bottom-bar a {
+      color: #ccc;
+      text-decoration: none;
+      margin-left: 20px;
+}
+
+.bottom-bar a:hover {
+      text-decoration: underline;
+      color: #fff;
+}
+
+.bottom-links {
+      display: flex;
+}
+
+
+<!-- pour la page medicament -- >
+
+.content{
+
+    padding: 40px;
+}
+
+.content h1{
+    margin-bottom: 20px;
+    color: #0d110f;
+    background-color: #caced3;
+    padding: 8px;
+}
+
+.add-btn{
+    background-color: #2f7d4e;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.add-btn i{
+    margin-right: 10px;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+table thead{
+    background-color: #2f7d4e;
+    color: white;
+
+}
+
+table th, table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+.edit-btn, .delete-btn {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 20px;
+}
