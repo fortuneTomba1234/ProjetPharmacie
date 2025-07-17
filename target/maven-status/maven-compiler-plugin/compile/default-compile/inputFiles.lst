@@ -1,0 +1,16 @@
+/home/tomba/Bureau/ProjetPharmacie/src/main/java/repository/ServiceAchatRepository.java
+/home/tomba/Bureau/ProjetPharmacie/src/main/java/controller/ServiceAchatController.java
+/home/tomba/Bureau/ProjetPharmacie/src/main/java/controller/WebApplication.java
+/home/tomba/Bureau/ProjetPharmacie/src/main/java/repository/LigneAchatRepository.java
+/home/tomba/Bureau/ProjetPharmacie/src/main/java/controller/LigneAchatController.java
+/home/tomba/Bureau/ProjetPharmacie/src/main/java/entities/Fournisseur.java
+/home/tomba/Bureau/ProjetPharmacie/src/main/java/Main.java
+/home/tomba/Bureau/ProjetPharmacie/src/main/java/controller/AccueilController.java
+/home/tomba/Bureau/ProjetPharmacie/src/main/java/controller/FournisseurController.java
+/home/tomba/Bureau/ProjetPharmacie/src/main/java/repository/FournisseurRepository.java
+/home/tomba/Bureau/ProjetPharmacie/src/main/java/repository/DataBase.java
+/home/tomba/Bureau/ProjetPharmacie/src/main/java/entities/LigneAchat.java
+/home/tomba/Bureau/ProjetPharmacie/src/main/java/entities/ServiceAchat.java
+/home/tomba/Bureau/ProjetPharmacie/src/main/java/entities/Medicament.java
+/home/tomba/Bureau/ProjetPharmacie/src/main/java/repository/MedicamentRepository.java
+/home/tomba/Bureau/ProjetPharmacie/src/main/java/controller/MedicamentController.java

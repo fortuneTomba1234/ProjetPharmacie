@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Modifier un champ du fournisseur</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            width: 400px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            color: #555;
+            font-weight: bold;
+        }
+
+        select, input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .actions {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        button, .retour {
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .retour {
+            background-color: #ccc;
+            color: #333;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .retour:hover {
+            background-color: #aaa;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Modifier un champ du fournisseur</h2>
+
+        <form action="/ProjetPharmacie/Fournisseur" method="post">
+            <input type="hidden" name="action" value="modifierChamp">
+            <input type="hidden" name="id_fournisseur" th:value="${fournisseur.id}" />
+
+            <label for="champ">Champ à modifier :</label>
+            <select name="champ" id="champ" required>
+                <option value="" disabled selected>-- Choisir un champ --</option>
+                <option value="nom_fournisseur">Nom</option>
+                <option value="prenom_fournisseur">Prénom</option>
+                <option value="adresse">Adresse</option>
+                <option value="telephone">Téléphone</option>
+                <option value="email">Email</option>
+            </select>
+
+            <label for="nouvelleValeur">Nouvelle valeur :</label>
+            <input type="text" name="nouvelleValeur" id="nouvelleValeur" required>
+
+            <div class="actions">
+                <button type="submit">Modifier</button>
+                <a href="/ProjetPharmacie/Fournisseur" class="retour">Annuler</a>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion médicament</title>
+    <link rel="stylesheet" th:href="@{/ressources/css/Medicament.css}">
+</head>
+<body>
+    <main class="sidebar">
+        <h1>
+            <i class="fas fa-clinic-medical"></i> SAINT SCOTT
+        </h1>
+
+        <div>
+            <ul>
+                <li><a href="/ProjetPharmacie/Accueil"><i class="fas fa-home"></i> ACCUEIL</a></li>
+                <li><a href="/ProjetPharmacie/Fournisseur"><i class="fas fa-truck"></i> Fournisseurs</a></li>
+                <li><a href="/ProjetPharmacie/Medicament" class="active"><i class="fas fa-pills"></i> Médicaments</a></li>
+                <li><a href="/ProjetPharmacie/LigneAchat"><i class="fas fa-list"></i> Lignes d'achat</a></li>
+                <li><a href="/ProjetPharmacie/ServiceAchat"><i class="fas fa-warehouse"></i> Services d'achat</a></li>
+            </ul>
+        </div>
+
+        <!-- Barre de recherche -->
+        <div class="topbar">
+            <i class="fas fa-search"></i>
+            <input type="text" class="chang" placeholder="Rechercher..." />
+        </div>
+
+        <!-- Formulaire médicament -->
+        <div class="forme">
+            <h2 id="info">Informations sur le médicament</h2><br>
+            <form action="/ProjetPharmacie/Medicament" method="post">
+
+                <label for="nom_medicament">Nom du médicament</label>
+                <input type="text" id="nom_medicament" name="nom_medicament" required><br><br>
+
+                <label for="description">Description</label>
+                <input type="text" id="description" name="description" required><br><br>
+
+                <label for="prix_unitaire">Prix unitaire</label>
+                <input type="number" id="prix_unitaire" name="prix_unitaire" required><br><br>
+
+                <label for="date_fabrication">Date de fabrication</label>
+                <input type="date" id="date_fabrication" name="date_fabrication" required><br><br>
+
+                <label for="date_expiration">Date d'expiration</label>
+                <input type="date" id="date_expiration" name="date_expiration" required><br><br>
+
+                <label for="stock">Stock</label>
+                <input type="number" id="stock" name="stock" required><br><br>
+
+                <button type="submit" name="action" value="enregistrer">Enregistrer</button>
+                <a href="/ProjetPharmacie/ListeMedicaments" class="button">AfficheListe</a>
+            </form>
+        </div>
+
+        <!-- Tableau des médicaments -->
+        <table class="tablo">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Description</th>
+                    <th>Prix unitaire</th>
+                    <th>Date fabrication</th>
+                    <th>Date expiration</th>
+                    <th>Stock</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="med : ${listeMedicaments}">
+                    <td th:text="${med.nom_medicament}">Nom</td>
+                    <td th:text="${med.description}">Description</td>
+                    <td th:text="${med.prix_unitaire}">1000</td>
+                    <td th:text="${med.date_fabrication}">2023-01-01</td>
+                    <td th:text="${med.date_expiration}">2024-01-01</td>
+                    <td th:text="${med.stock}">100</td>
+                    <td>
+                           
+        <!-- Icône Modifier -->
+          <i class="fas fa-edit" style="color:#4caf50; cursor:pointer; margin-right:10px;" title="Modifier"
+           th:attr="onclick='executerAction(\'modifier\')'"></i>
+
+        <!-- Icône Supprimer -->
+        <i class="fas fa-trash-alt" style="color:#f44336; cursor:pointer;" title="Supprimer"
+           th:attr="onclick='executerAction(\'supprimer\')'"></i>
+    </td>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</body>
+</html>

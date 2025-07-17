@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestionmedicament</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" th:href="@{/ressources/css/Fournisseur.css}">
+</head>
+<body>
+    <main class="sidebar">
+        <h1>
+            <i class="fas fa-clinic-medical"></i> SAINT SCOTT
+        </h1>
+
+        <div>
+            <ul>
+               <li><a href="/ProjetPharmacie/Accueil"><i class="fas fa-home"></i> ACCUEIL</a></li>
+               <li><a href="/ProjetPharmacie/Fournisseur" class="active"><i class="fas fa-truck"></i> Fournisseurs</a></li>
+               <li><a href="/ProjetPharmacie/Medicament"><i class="fas fa-pills"></i> Médicaments</a></li>
+               <li><a href="/ProjetPharmacie/LigneAchat"><i class="fas fa-list"></i> Lignes d'achat</a></li>
+               <li><a href="/ProjetPharmacie/ServiceAchat"><i class="fas fa-warehouse"></i> Services d'achat</a></li>
+            </ul>
+        </div>
+
+        <div class="topbar">
+          <i class="fas fa-search"></i>
+          <input type="text" class="chang" placeholder="Rechercher..." />
+        </div>
+
+        <div class="forme">
+            <h2 id="info" th:text="${fournisseurModif != null} ? 'Modifier fournisseur' : 'Informations sur le fournisseur'">Informations sur le fournisseur</h2><br>
+
+            <form action="/ProjetPharmacie/Fournisseur" method="post">
+                <!-- ID (pour modification uniquement) -->
+                <input type="hidden" name="id_fournisseur" th:if="${fournisseurModif != null}" th:value="${fournisseurModif.id}" />
+
+                <label for="nom_fournisseur">Nom</label>
+                <input type="text" id="nom_fournisseur" name="nom_fournisseur"
+                       th:value="${fournisseurModif != null} ? ${fournisseurModif.nom_fournisseur} : ''" required><br><br>
+
+                <label for="prenom_fournisseur">Prénom</label>
+                <input type="text" id="prenom_fournisseur" name="prenom_fournisseur"
+                       th:value="${fournisseurModif != null} ? ${fournisseurModif.prenom_fournisseur} : ''" required><br><br>
+
+                <label for="adresse">Adresse</label>
+                <input type="text" id="adresse" name="adresse"
+                       th:value="${fournisseurModif != null} ? ${fournisseurModif.adresse} : ''" required><br><br>
+
+                <label for="telephone">Téléphone</label>
+                <input type="text" id="telephone" name="telephone"
+                       th:value="${fournisseurModif != null} ? ${fournisseurModif.telephone} : ''" required><br><br>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email"
+                       th:value="${fournisseurModif != null} ? ${fournisseurModif.email} : ''" required><br><br>
+
+                <!-- Bouton dynamique -->
+                <button type="submit" name="action"
+                        th:value="${fournisseurModif != null} ? 'modifier' : 'ajouter'">
+                    <span th:text="${fournisseurModif != null} ? 'Mettre à jour' : 'Enregistrer'">Enregistrer</span>
+                </button>
+
+                <a href="/ProjetPharmacie/ListeFournisseurs" class="buttons">Afficher la liste</a>
+            </form>
+        </div>
+
+        <div th:if="${message}" class="message-success" th:text="${message}"></div>
+
+        <table class="tablo">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Adresse</th>
+                    <th>Téléphone</th>
+                    <th>Email</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="f : ${listeFournisseurs}">
+                    <td th:text="${f.id}"></td>
+                    <td th:text="${f.nom_fournisseur}"></td>
+                    <td th:text="${f.prenom_fournisseur}"></td>
+                    <td th:text="${f.adresse}"></td>
+                    <td th:text="${f.telephone}"></td>
+                    <td th:text="${f.email}"></td>
+                    <td>
+                        <!-- Bouton Modifier -->
+                        <form action="/ProjetPharmacie/Fournisseur" method="post" style="display:inline;">
+                            <input type="hidden" name="action" value="edit"/>
+                            <input type="hidden" name="id_fournisseur" th:value="${f.id}"/>
+                            <button type="submit" style="background:none; border:none; cursor:pointer;">
+                                <i class="fas fa-edit" style="color:#4caf50;" title="Modifier"></i>
+                            </button>
+                        </form>
+
+                        <!-- Bouton Supprimer -->
+                        <form action="/ProjetPharmacie/Fournisseur" method="post" style="display:inline;">
+                            <input type="hidden" name="action" value="supprimer"/>
+                            <input type="hidden" name="id_fournisseur" th:value="${f.id}"/>
+                            <button type="submit" style="background:none; border:none; cursor:pointer;">
+                                <i class="fas fa-trash-alt" style="color:#f44336;" title="Supprimer"></i>
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</body>
+</html>

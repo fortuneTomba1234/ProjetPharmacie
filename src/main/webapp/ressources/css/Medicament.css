@@ -1,0 +1,170 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+     display: flex;
+    min-height: 100vh;
+    background-color: #f0f2f5;
+}
+.sidebar{
+    width: 220px;
+    background-color: #1e1e2f;
+    color: white;
+    padding: 20px;
+    position: fixed;
+    height: 100vh;
+}
+.sidebar h1{
+    font-size: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+}
+.sidebar h1 i{
+     margin-right: 10px;
+}
+.sidebar li{
+    list-style-type: none;
+    margin: 20px 0;
+}
+.sidebar a{
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+
+}
+.sidebar a i{
+    margin-right: 10px;
+    font-size: 18px;
+}
+.sidebar a:hover{
+background-color: #2e2e40;
+color: white;
+}
+.active{
+    background-color: rgb(199, 156, 240);
+}
+.topbar{
+    position: fixed;
+    top: 5px;
+    left: 220px;
+    width: 100%;
+    color: white;
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+.topbar input{
+    font-weight: bold;
+    text-decoration: none;
+    gap: 20px;
+    font-size: 20px;
+}
+.fa-search{
+    color: black;
+}
+.topbar i {
+    color: #333;
+    font-size: 16px;
+    margin-right: 8px;
+    color: black;
+}
+#info{
+    
+    margin-top: 10px;
+    margin-left: 100px;
+    font-style: oblique;
+}
+.forme{
+    display: block;
+    margin-top: -180px;
+    margin-left: 220px;
+    background-color: rgb(19, 114, 209);
+    height: 390px;
+    width: 1050px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 8px ;
+    box-shadow: 2px solid rgb(1, 27, 27);
+    color: black;
+
+}
+label{
+    margin-left: 20px;
+}
+#info{
+    text-align: center;
+}
+button{
+    align-items: center;
+    margin-left: 230px;
+    margin-top: -100px;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: normal;
+    cursor: pointer;
+    color:rgb(49, 6, 73);
+}
+button:hover{
+    background-color:rgb(161, 228, 228);
+}
+a.buttons {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgb(49, 6, 73); /* Violet foncé */
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 6px;
+    border: 1px solid #08080a;
+    margin-left: 905px;
+    margin-top: -30px;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    line-height: 40px;
+    height: 40px;
+    width: 150px;
+}
+
+a.buttons:hover {
+    background-color: rgb(161, 228, 228);
+    color: black;
+}
+
+.tablo{
+    display: block;
+    background-color: #032247;
+    margin-top: 430px;
+    margin-left: -1000px;
+    border-collapse: collapse;
+    font-size: 20px;
+    box-shadow: #08080a;
+    width: 1000px;
+    height: 200px;
+    border-radius: 5px;
+}
+.tablo thead {
+  background-color:rgb(3, 20, 36);
+  color: black;
+}
+.tablo th, .tablo td {
+  padding: 33px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+
+}
+.tablo td:hover{
+    background-color: rgb(2, 14, 36);
+}
+.tablo th{
+    background-color: rgb(4, 45, 46);
+}
+
+
+
+

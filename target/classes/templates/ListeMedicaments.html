@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des Fournisseurs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #2c3e50;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: #3498db;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .btn-retour {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 15px;
+            background-color: #2ecc71;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .btn-retour:hover {
+            background-color: #27ae60;
+        }
+    </style>
+</head>
+<body>
+
+    <h1><i class="fas fa-pills"></i> Liste des Médicaments</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>nom_medicament</th>
+                <th>Description</th>
+                <th>Prix unitaire</th>
+                <th>Date fabrication</th>
+                <th>Date expiration</th>
+                <th>Stock</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="f : ${listeMedicaments}">
+                <td th:text="${f.id}">1</td>
+                <td th:text="${f.nom_medicament}">Nom</td>
+                <td th:text="${f.description}">Description</td>
+                <td th:text="${f.prix_unitaire}">1000</td>
+                <td th:text="${f.date_fabrication}">2023-01-01</td>
+                <td th:text="${f.date_expiration}">2024-01-01</td>
+                <td th:text="${f.stock}">100</td>
+                <td > 
+                    <form th:action="@{/ListeMedicaments}" method="post">
+                        <button type="submit" name="action" value="modifier">
+                            <i class="fas fa-edit"></i> modifier
+                        </button>
+                        <button type="submit" name="action" value="supprimer" class="btn-supprimer">
+                            <i class="fas fa-trash"></i> Supprimer
+                        </button>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="/ProjetPharmacie/Medicament" class="btn-retour"><i class="fas fa-arrow-left"></i> Retour au formulaire</a>
+
+</body>
+</html>
